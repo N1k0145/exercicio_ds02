@@ -17,10 +17,10 @@ public class Exercicio03 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Digite sua altura (em metros): ");
+        System.out.println("Digite sua altura (em metros): ");
         double altura = scanner.nextDouble();
         
-        System.out.print("Digite seu sexo (M para masculino ou F para feminino): ");
+        System.out.println("Digite seu sexo (M para masculino ou F para feminino): ");
         char sexo = scanner.next().charAt(0);
 
         double pesoIdeal = calcularPesoIdeal(sexo, altura);
