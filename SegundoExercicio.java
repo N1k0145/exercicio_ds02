@@ -1,33 +1,23 @@
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
-public class Exercicio02 {
+public class Exercicio2 {
 
-    public static void diferenca(double a, double b) {
-        double maior, menor;
-        
-        if (a > b) {
-            maior = a;
-            menor = b;
-        } else {
-            maior = b;
-            menor = a;
-        }
-        
-        double resultado = maior - menor;
-        System.out.println("A diferença entre o maior e o menor é: " + resultado);
+    public static double lerValor(String mensagem) {
+        String input = JOptionPane.showInputDialog(mensagem);
+        return Double.parseDouble(input);
+    }
+
+    public static double diferenca(double valor1, double valor2) {
+        return Math.abs(valor1 - valor2);
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        double valor1 = lerValor("Digite o primeiro valor real:");
+        double valor2 = lerValor("Digite o segundo valor real:");
 
-        System.out.println("Digite o primeiro valor real: ");
-        double valor1 = scanner.nextDouble();
-        
-        System.out.println("Digite o segundo valor real: ");
-        double valor2 = scanner.nextDouble();
+        double resultado = diferenca(valor1, valor2);
 
-        diferenca(valor1, valor2);
-        
-        scanner.close();
+        String mensagem = String.format("A diferença entre o maior e o menor valor é: %.2f", resultado);
+        JOptionPane.showMessageDialog(null, mensagem);
     }
 }
